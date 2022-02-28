@@ -1,6 +1,9 @@
 prog: fa.o fb.o main.o
 	gcc *.o -o prog
 
+clean:
+	rm *.o
+
 main.o: main.c
 	gcc -c main.c
 
