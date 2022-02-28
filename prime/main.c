@@ -25,11 +25,9 @@ void libererTab()
 void elimine(int i,int N)
 {
     int j;
-    for (j=i+1;j<N;j++)
+    for (j=2*i;j<N;j+=i)
     {
-        //on elimine ses multiples
-        if (j%i==0)
-            tab[j]=0;
+        tab[j]=0;
     }
 }
 
@@ -58,7 +56,6 @@ int main(int argc, char *argv[])
     printf("Premiers de 2 a %d.\n",N);
     if (!creerTab(N))
         return 1;
-    N++;        
     
     for (i=2;i<N;i++)
     {
@@ -70,6 +67,8 @@ int main(int argc, char *argv[])
     }
     
     afficher(N);
+
+    libererTab();
     
     return 0;
 }
